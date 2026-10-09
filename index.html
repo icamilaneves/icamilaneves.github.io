@@ -77,6 +77,15 @@ section{padding-block:clamp(56px,8vw,96px);border-top:1px solid var(--line)}
 .sec-head h2{font-size:clamp(2rem,4.4vw,3rem);font-weight:800;letter-spacing:-.025em;margin-top:10px}
 .sec-head p{color:var(--muted);max-width:44ch}
 
+.segments{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
+.segment{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:24px;display:grid;gap:10px;align-content:start;min-width:0}
+.segment.main{background:var(--deep);border-color:var(--deep);color:var(--deep-fg)}
+.segment.main .label{color:var(--soft)}
+.segment.main p{color:var(--soft)}
+.segment h3{font-size:1.25rem;font-weight:700}
+.segment p{color:var(--muted);font-size:.98rem}
+@media (max-width:900px){.segments{grid-template-columns:1fr 1fr}}
+@media (max-width:620px){.segments{grid-template-columns:1fr}}
 /* Serviços */
 .services{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 .service{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:26px;display:grid;gap:12px;align-content:start;min-width:0}
@@ -87,6 +96,13 @@ section{padding-block:clamp(56px,8vw,96px);border-top:1px solid var(--line)}
 .formato span{font:500 .72rem var(--font-mono);padding:4px 9px;border-radius:6px;border:1px solid var(--line);color:var(--muted)}
 .note{margin-top:20px;color:var(--muted);font-size:.95rem}
 
+.services.areas{grid-template-columns:repeat(2,minmax(0,1fr))}
+.area-top{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.area-list{margin:0;padding:0;list-style:none;display:grid;gap:6px}
+.area-list li{display:flex;gap:10px;color:var(--fg);font-size:.98rem}
+.area-list li::before{content:"›";color:var(--accent);font-weight:700}
+.service.featured-area{border:2px solid var(--accent)}
+@media (max-width:620px){.services.areas{grid-template-columns:1fr}}
 /* Projetos */
 .projects{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
 .project{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;min-width:0}
@@ -174,6 +190,7 @@ footer{padding-block:32px;color:var(--muted);font-size:.9rem;display:flex;justif
       <small>Consultoria TI · Informática em Saúde</small>
     </a>
     <ul>
+      <li><a href="#segmentos">Segmentos</a></li>
       <li><a href="#servicos">Serviços</a></li>
       <li><a href="#projetos">Projetos</a></li>
       <li><a href="#sobre">Sobre</a></li>
@@ -185,9 +202,9 @@ footer{padding-block:32px;color:var(--muted);font-size:.9rem;display:flex;justif
 <main class="wrap" id="inicio">
   <div class="hero">
     <div>
-      <span class="status"><i></i>Informática em Saúde</span>
-      <h1>Tecnologia que organiza o <em>atendimento em saúde</em></h1>
-      <p class="lead">Sou Camila Neves, analista de sistemas e especialista em Informática em Saúde. Ajudo clínicas, consultórios e laboratórios a escolher, implantar e usar bem seus sistemas, com segurança e dentro da LGPD.</p>
+      <span class="status"><i></i>Sistemas · Automação · Dados</span>
+      <h1>Sistemas e tecnologia que <em>organizam o seu negócio</em></h1>
+      <p class="lead">Sou Camila Neves, analista de sistemas e especialista em Informática em Saúde. Crio sites, sistemas, automações e dashboards para clínicas, barbearias, supermercados e pequenos negócios, com segurança e dentro da LGPD.</p>
       <div class="ctas">
         <a class="btn primary" href="#contato">Agendar uma conversa →</a>
         <a class="btn ghost" href="#servicos">Ver serviços</a>
@@ -201,97 +218,79 @@ footer{padding-block:32px;color:var(--muted);font-size:.9rem;display:flex;justif
   area: <span class="s">"Informática em Saúde"</span>,
   experiencia: <span class="s">"3+ anos de TI na saúde"</span>,
   atende: <span class="s">"remoto, todo o Brasil"</span>,
-  ajuda: [<span class="s">"clínicas"</span>, <span class="s">"consultórios"</span>,
-          <span class="s">"laboratórios"</span>],
-  foco: <span class="s">"menos papel, mais cuidado"</span>,
+  atende: [<span class="s">"clínicas"</span>, <span class="s">"barbearias"</span>,
+           <span class="s">"supermercados"</span>, <span class="s">"comércios"</span>],
+  foco: <span class="s">"menos papel, mais resultado"</span>,
 };
-<span class="c">// vamos conversar sobre a sua clínica?</span></pre>
+<span class="c">// vamos conversar sobre o seu negócio?</span></pre>
     </div>
   </div>
+
+  <!-- SEGMENTOS -->
+  <section id="segmentos">
+    <div class="sec-head">
+      <div><span class="label">Para quem eu trabalho</span><h2>Segmentos</h2></div>
+      <p>A saúde é a minha especialidade, mas levo a mesma organização para qualquer negócio que precise de tecnologia.</p>
+    </div>
+    <div class="segments">
+      <div class="segment main">
+        <span class="label">Minha especialidade</span>
+        <h3>Saúde</h3>
+        <p>Clínicas, consultórios, laboratórios e serviços para a pessoa idosa: agenda, fila, prontuário, faturamento e LGPD.</p>
+      </div>
+      <div class="segment">
+        <h3>Barbearias e salões</h3>
+        <p>Agendamento online, lembretes automáticos, cadastro de clientes e controle de caixa.</p>
+      </div>
+      <div class="segment">
+        <h3>Supermercados e comércio</h3>
+        <p>Controle de estoque, painéis de vendas, catálogo digital e automação de relatórios.</p>
+      </div>
+      <div class="segment">
+        <h3>Pequenos negócios</h3>
+        <p>Sites, sistemas sob medida, automações, manutenção de computadores e instalação de equipamentos e redes.</p>
+      </div>
+    </div>
+  </section>
 
   <!-- SERVIÇOS -->
   <section id="servicos">
     <div class="sec-head">
       <div><span class="label">O que eu faço</span><h2>Serviços</h2></div>
-      <p>Cada serviço pode ser contratado como projeto, com começo e fim, como acompanhamento mensal ou por evento.</p>
+      <p>Quatro áreas de atuação. Cada serviço pode ser contratado como projeto, acompanhamento mensal, atendimento avulso ou por evento.</p>
     </div>
 
-    <div class="services">
-      <!-- EDITE: ajuste os serviços conforme o que você oferece -->
+    <div class="services areas">
       <div class="service">
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"></rect><path d="M8 8h8M8 12h8M8 16h5"></path></svg>
-        <h3>Implantação de sistemas</h3>
-        <p>Ajudo a escolher e implantar prontuário eletrônico, agenda e sistema de gestão, e migro os dados antigos com cuidado.</p>
-        <div class="formato"><span>Projeto</span></div>
-      </div>
-      <div class="service">
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"></path><path d="M9 12l2 2 4-4"></path></svg>
-        <h3>Adequação à LGPD</h3>
-        <p>Mapeio onde estão os dados dos pacientes, ajusto acessos e documentos e preparo a equipe para proteger dados sensíveis.</p>
+        <div class="area-top"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="14" rx="2"></rect><path d="M8 21h8M8 9l-2 2 2 2M16 9l2 2-2 2"></path></svg></div>
+        <h3>Sites e sistemas</h3>
+        <p>Presença digital e sistemas que organizam a rotina do negócio.</p>
+        <ul class="area-list"><li>Sites e landing pages</li><li>Agendamento online com WhatsApp</li><li>Sistemas sob medida</li><li>Integração entre sistemas</li></ul>
         <div class="formato"><span>Projeto</span><span>Mensal</span></div>
       </div>
       <div class="service">
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19V9M10 19V5M16 19v-7M22 19H2"></path></svg>
-        <h3>Processos e indicadores</h3>
-        <p>Organizo fluxos de atendimento e faturamento de convênios (TISS/TUSS) e monto painéis para acompanhar a clínica.</p>
+        <div class="area-top"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"></path><path d="M7 15l4-4 3 3 5-6"></path></svg></div>
+        <h3>Dados e automação</h3>
+        <p>Números organizados para decidir melhor e tarefas repetitivas resolvidas sozinhas.</p>
+        <ul class="area-list"><li>Dashboards e indicadores (Power BI)</li><li>Automação de planilhas e relatórios</li><li>Organização e limpeza de cadastros</li><li>Gestão de projetos com Scrum e Kanban</li></ul>
+        <div class="formato"><span>Projeto</span><span>Mensal</span></div>
+      </div>
+      <div class="service featured-area">
+        <div class="area-top"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"></path><path d="M12 9v6M9 12h6"></path></svg><span class="label">Minha especialidade</span></div>
+        <h3>Saúde digital</h3>
+        <p>Minha especialidade: tecnologia para clínicas, consultórios e laboratórios.</p>
+        <ul class="area-list"><li>Implantação de prontuário e agenda</li><li>Adequação à LGPD em saúde</li><li>Telessaúde e teleconsulta</li><li>Fluxos de atendimento e faturamento (TISS/TUSS)</li></ul>
         <div class="formato"><span>Projeto</span><span>Mensal</span></div>
       </div>
       <div class="service">
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="14" rx="2"></rect><path d="M8 21h8M8 9l-2 2 2 2M16 9l2 2-2 2"></path></svg>
-        <h3>Sites e agendamento online</h3>
-        <p>Crio sites para profissionais de saúde, com agendamento online e botão de WhatsApp, pensados para o paciente.</p>
-        <div class="formato"><span>Projeto</span></div>
-      </div>
-      <div class="service">
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3"></circle><path d="M3 20c0-3 2.7-5 6-5s6 2 6 5M16 5a3 3 0 010 6M18 15c2 .6 3 2.3 3 5"></path></svg>
-        <h3>Treinamento de equipes</h3>
-        <p>Treino recepção, profissionais e gestores para usar os sistemas no dia a dia, com material simples e prático.</p>
-        <div class="formato"><span>Projeto</span></div>
-      </div>
-      <div class="service">
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="6" r="3"></circle><circle cx="18" cy="18" r="3"></circle><path d="M8.6 10.6l6.8-3.2M8.6 13.4l6.8 3.2"></path></svg>
-        <h3>Integração de sistemas</h3>
-        <p>Faço sistemas diferentes conversarem, como laboratório, prontuário e faturamento, usando padrões como HL7 e FHIR.</p>
-        <div class="formato"><span>Projeto</span><span>Mensal</span></div>
-      </div>
-      <div class="service">
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"></path><path d="M7 15l4-4 3 3 5-6"></path></svg>
-        <h3>Análise de dados e painéis</h3>
-        <p>Transformo dados de atendimento, faltas e faturamento em painéis no Power BI, para a gestão decidir com números.</p>
-        <div class="formato"><span>Projeto</span><span>Mensal</span></div>
-      </div>
-      <div class="service">
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="5" rx="8" ry="3"></ellipse><path d="M4 5v6c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 11v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"></path></svg>
-        <h3>Organização de cadastros</h3>
-        <p>Corrijo e unifico bases de pacientes: removo duplicados, padronizo dados e deixo o cadastro confiável.</p>
-        <div class="formato"><span>Projeto</span></div>
-      </div>
-      <div class="service">
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="14" height="12" rx="2"></rect><path d="M16 10l6-3v10l-6-3"></path></svg>
-        <h3>Telessaúde</h3>
-        <p>Ajudo a implantar teleconsulta e atendimento remoto: escolha da plataforma, fluxos, segurança e treinamento.</p>
-        <div class="formato"><span>Projeto</span></div>
-      </div>
-      <div class="service">
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 14v-3a8 8 0 0116 0v3"></path><rect x="2" y="14" width="5" height="6" rx="1.5"></rect><rect x="17" y="14" width="5" height="6" rx="1.5"></rect></svg>
-        <h3>Suporte técnico</h3>
-        <p>Suporte presencial e remoto a computadores, sistemas e usuários, com atendimento organizado por chamados.</p>
-        <div class="formato"><span>Mensal</span></div>
-      </div>
-      <div class="service">
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l18-7-7 18-2-8z"></path></svg>
-        <h3>Gestão de projetos de TI</h3>
-        <p>Levanto requisitos, organizo etapas com Scrum e Kanban e acompanho fornecedores até a entrega.</p>
-        <div class="formato"><span>Projeto</span><span>Mensal</span></div>
-      </div>
-      <div class="service">
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"></rect><path d="M8 20h8M12 16v4M8 9h8M8 12h5"></path></svg>
-        <h3>Palestras e oficinas</h3>
-        <p>Palestras sobre segurança digital e golpes na internet, em linguagem simples, para equipes e grupos de pacientes.</p>
-        <div class="formato"><span>Por evento</span></div>
+        <div class="area-top"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 00-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 005.4-5.4l-2.5 2.5-2.5-2.5z"></path></svg></div>
+        <h3>Suporte e infraestrutura</h3>
+        <p>Computadores, equipamentos e pessoas funcionando bem no dia a dia.</p>
+        <ul class="area-list"><li>Manutenção e formatação de computadores</li><li>Instalação de sistemas, impressoras e redes</li><li>Treinamento de equipes</li><li>Palestras sobre segurança digital</li></ul>
+        <div class="formato"><span>Avulso</span><span>Mensal</span><span>Por evento</span></div>
       </div>
     </div>
-    <p class="note">Os valores são definidos depois de uma conversa de diagnóstico, de acordo com o tamanho da clínica e do projeto.</p>
+    <p class="note">Os valores são definidos depois de uma conversa de diagnóstico, de acordo com o tamanho do negócio e do projeto.</p>
   </section>
 
   <!-- PROJETOS -->
@@ -343,7 +342,7 @@ footer{padding-block:32px;color:var(--muted);font-size:.9rem;display:flex;justif
         <div class="project-body">
           <span class="label">Em breve</span>
           <h3>Seu projeto pode ser o próximo</h3>
-          <p>Precisa de um site, uma automação ou um painel de indicadores para sua clínica? Vamos conversar sobre a sua necessidade.</p>
+          <p>Precisa de um site, um sistema, uma automação ou um painel de indicadores para o seu negócio? Vamos conversar sobre a sua necessidade.</p>
           <div class="links"><a href="#contato">Falar comigo</a></div>
         </div>
       </article>
@@ -372,7 +371,7 @@ footer{padding-block:32px;color:var(--muted);font-size:.9rem;display:flex;justif
       <div class="txt">
         <p>Sou analista de sistemas, formada em Gestão da Tecnologia da Informação e pós-graduada em Data Science e Informática em Saúde. Há mais de 3 anos trabalho com TI em uma fundação pública de saúde do Amazonas, dando suporte a sistemas e usuários em 28 municípios.</p>
         <p>Foi observando essa rotina que criei o SysClin, meu sistema de gestão de filas, agenda e prontuário. Também cuidei da organização da base de dados de pacientes. Também apoio a gestão de projetos de um núcleo de Saúde Digital com Kanban.</p>
-        <p>Entendo a rotina de quem atende pacientes e traduzo a tecnologia para uma linguagem simples. Meu objetivo é que a equipe gaste menos tempo com papel e sistema, e mais tempo com cuidado.</p>
+        <p>O que eu mais gosto é de resolver problemas e atender a necessidade real do cliente. Primeiro eu escuto e entendo a rotina do negócio; depois entrego a solução que faz sentido, explicada em linguagem simples e sem complicar.</p>
         <span class="label" style="margin-top:12px">Formação</span>
         <ul class="edu">
           <li><b>Saúde Coletiva, área de Saúde Digital</b>UFBA · em andamento</li>
@@ -391,7 +390,7 @@ footer{padding-block:32px;color:var(--muted);font-size:.9rem;display:flex;justif
   <!-- CONTATO -->
   <section id="contato" style="border-top:0">
     <div class="contact">
-      <div><span class="label">Contato</span><h2 style="margin-top:12px">Vamos melhorar a tecnologia da sua clínica?</h2></div>
+      <div><span class="label">Contato</span><h2 style="margin-top:12px">Vamos melhorar a tecnologia do seu negócio?</h2></div>
       <div class="channels">
         <div class="channel">
           <span class="label">WhatsApp</span>
