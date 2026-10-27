@@ -157,6 +157,10 @@ section{padding-block:clamp(56px,8vw,96px);border-top:1px solid var(--line)}
 .project.wide{grid-column:1/-1;display:grid;grid-template-columns:1fr 2fr}
 .project.wide .thumb{aspect-ratio:auto;min-height:200px}
 @media (max-width:900px){.project.wide{grid-template-columns:1fr}.project.wide .thumb{aspect-ratio:16/9;min-height:0}}
+/* Teleconsulta sem Medo */
+.p6{background:#E9B949}
+.thumb.p6{align-items:center;justify-content:center;padding:18px}
+.app-ill{height:88%;width:auto;max-width:100%}
 /* Certificações */
 .certs{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px}
 @media (max-width:620px){.certs{grid-template-columns:1fr 1fr;gap:12px}.cert{padding:18px 12px 12px}.hex{width:70px}.cert h3{font-size:.92rem}.cert-foot{flex-direction:column;gap:4px}}
@@ -393,7 +397,32 @@ footer{padding-block:32px;color:var(--muted);font-size:.9rem;display:flex;justif
         </div>
       </article>
 
-      <article class="project wide">
+      <!-- Projeto autoral: descrição apenas informativa. -->
+      <article class="project">
+        <div class="thumb p6">
+          <svg class="app-ill" viewBox="0 0 200 200" role="img" aria-label="Ilustração de um celular com chamada de vídeo e áudio">
+            <rect x="58" y="14" width="84" height="172" rx="16" fill="#1B2A2C"/>
+            <rect x="66" y="30" width="68" height="132" rx="8" fill="#FFFFFF"/>
+            <rect x="74" y="40" width="52" height="40" rx="6" fill="#DDEEEC"/>
+            <circle cx="100" cy="55" r="8" fill="#0B5C63"/>
+            <path d="M86 78c2-8 8-11 14-11s12 3 14 11z" fill="#0B5C63"/>
+            <rect x="74" y="88" width="52" height="7" rx="3.5" fill="#C6D6D4"/>
+            <rect x="74" y="100" width="38" height="7" rx="3.5" fill="#C6D6D4"/>
+            <rect x="74" y="136" width="52" height="18" rx="9" fill="#F5B700"/>
+            <path d="M154 78h10l12-10v44l-12-10h-10z" fill="#1B2A2C"/>
+            <path d="M184 76a18 18 0 0 1 0 28" fill="none" stroke="#1B2A2C" stroke-width="5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="project-body">
+          <span class="label">Projeto autoral · protótipo</span>
+          <h3>Teleconsulta sem Medo</h3>
+          <p>Aplicativo web de letramento digital que ensina a pessoa idosa, passo a passo e com áudio, a participar de uma teleconsulta com segurança.</p>
+          <div class="tags"><span>Saúde Digital</span><span>Acessibilidade</span><span>Pessoa idosa</span></div>
+          <div class="links"><a href="#contato">Pedir uma demonstração</a></div>
+        </div>
+      </article>
+
+      <article class="project">
         <div class="thumb p4"><div class="mock"><div class="bar"><b></b><b></b><b></b></div><b class="big"></b><div class="chk"><i></i><b></b></div><div class="chk"><i></i><b></b></div><div class="chk"><i></i><b style="width:60%"></b></div></div></div>
         <div class="project-body">
           <span class="label">Em breve</span>
